@@ -1,0 +1,80 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  gap: 0.25em;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 5em 1fr 5em;
+  grid-template-areas:
+    "nav1 nav1 nav1 nav2 nav2 nav2 nav3 nav3 nav3 nav4 nav4 nav4"
+    "section1 section1 section1 section1 section2 section2 section2 section2 section3 section3 section3 section3"
+    "footer footer footer footer footer footer footer footer footer footer footer footer";
+}
+
+nav:nth-child(1) {
+  grid-area: nav1;
+}
+
+nav:nth-child(2) {
+  grid-area: nav2;
+}
+
+nav:nth-child(3) {
+  grid-area: nav3;
+}
+
+nav:nth-child(4) {
+  grid-area: nav4;
+}
+
+section:nth-of-type(1) {
+  grid-area: section1;
+}
+
+section:nth-of-type(2) {
+  grid-area: section2;
+}
+
+section:nth-of-type(3) {
+  grid-area: section3;
+}
+
+nav {
+  background-color: rgb(173, 23, 166);
+}
+
+section {
+  background-color: rgb(253, 184, 244);
+}
+
+footer {
+  background-color: rgb(183, 216, 164);
+  grid-area: footer;
+}
+
+@media screen and (max-width: 415px) {
+  body {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    gap: 0.25em;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(8, 1fr) 5em;
+    grid-template-areas:
+      "nav1 nav2"
+      "nav3 nav4"
+      "section1 section1"
+      "section1 section1"
+      "section2 section2"
+      "section2 section2"
+      "section3 section3"
+      "section3 section3"
+      "footer footer";
+  }
+}
